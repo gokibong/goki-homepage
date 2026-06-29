@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고기봉 · AI 컨설턴트 · 상상우리</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+      font-size: 16px;
+      color: #333;
+      background: #fff;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── 헤더 ── */
+    .header {
+      background: #1F3864;
+      color: #fff;
+      padding: 40px 20px 32px;
+      text-align: center;
+    }
+
+    .profile-wrap {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin: 0 auto 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+    }
+
+    .profile-initial {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1F3864;
+      line-height: 1;
+    }
+
+    /*
+      프로필 사진을 추가하려면:
+      1. profile.jpg 파일을 이 HTML 파일과 같은 폴더에 넣으세요.
+      2. 아래 .profile-wrap 안의 <span>을 지우고
+         <img src="profile.jpg" alt="고기봉">으로 교체하세요.
+    */
+    .profile-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name-line {
+      font-size: clamp(1.1rem, 5.5vw, 1.5rem);
+      font-weight: 700;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    /* ── 자기소개 ── */
+    .bio {
+      padding: 28px 24px;
+      border-bottom: 1px solid #333;
+    }
+
+    .bio p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #333;
+    }
+
+    /* ── 경력 ── */
+    .career {
+      padding: 28px 24px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #1F3864;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .card {
+      border: 1px solid #333;
+      border-left: 4px solid #1F3864;
+      border-radius: 4px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-year {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #1F3864;
+      margin-bottom: 4px;
+    }
+
+    .card-company {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 2px;
+    }
+
+    .card-role {
+      font-size: 0.88rem;
+      color: #333;
+    }
+
+    /* ── 버튼 ── */
+    .actions {
+      padding: 24px 24px 52px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      line-height: 1;
+      font-family: inherit;
+    }
+
+    .btn-email {
+      background: #1F3864;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-phone {
+      background: #fff;
+      color: #1F3864;
+      border: 2px solid #1F3864;
+    }
+
+    /* 복사 완료 토스트 */
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 24px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 헤더: 이름·직책·회사 -->
+  <header class="header">
+    <div class="profile-wrap">
+      <!-- 프로필 사진 준비 전: 이니셜 표시 -->
+      <!-- 사진 파일이 있으면 위 span을 지우고 아래를 활성화하세요 -->
+      <img src="goki_picture1.png" alt="고기봉">
+    </div>
+    <p class="name-line">고기봉 · AI 컨설턴트 · 상상우리</p>
+  </header>
+
+  <!-- 자기소개 -->
+  <section class="bio">
+    <p>삼성그룹에서 정보시스템 구축 및 유지보수 업무를 수행하였으며, 이후 정보시스템 BPR/ISP 컨설팅과 해외 관세청 전자통관 시스템 컨설팅을 수행하였습니다. 현재는 소상공인을 위한 AI 도입 컨설팅을
+      진행하고 있습니다.</p>
+  </section>
+
+  <!-- 경력 (최신순) -->
+  <section class="career">
+    <p class="section-label">경력</p>
+
+    <div class="card">
+      <p class="card-year">2026 – 현재</p>
+      <p class="card-company">상상우리</p>
+      <p class="card-role">컨설턴트 · AI 컨설팅</p>
+    </div>
+
+    <div class="card">
+      <p class="card-year">2011 – 2025</p>
+      <p class="card-company">이씨플라자</p>
+      <p class="card-role">부장 · 관세청 전자통관 컨설팅</p>
+    </div>
+
+    <div class="card">
+      <p class="card-year">2000 – 2010</p>
+      <p class="card-company">넥스비텍</p>
+      <p class="card-role">부장 · 정보시스템 BPR/ISP</p>
+    </div>
+
+    <div class="card">
+      <p class="card-year">1986 – 1999</p>
+      <p class="card-company">삼성SDS</p>
+      <p class="card-role">과장 · 정보시스템 개발 및 유지보수</p>
+    </div>
+  </section>
+
+  <!-- 액션 버튼 -->
+  <section class="actions">
+    <a class="btn btn-email" href="mailto:gokibong@gmail.com">이메일 보내기</a>
+    <button class="btn btn-phone" onclick="copyPhone()">전화 걸기</button>
+  </section>
+
+  <!-- 복사 완료 토스트 메시지 -->
+  <div class="toast" id="toast">010-2681-2758 복사됨</div>
+
+  <script>
+    function copyPhone() {
+      var phone = '010-2681-2758';
+
+      function showToast() {
+        var toast = document.getElementById('toast');
+        toast.classList.add('show');
+        setTimeout(function () { toast.classList.remove('show'); }, 2000);
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(phone).then(showToast);
+      } else {
+        var el = document.createElement('textarea');
+        el.value = phone;
+        el.style.cssText = 'position:fixed;opacity:0;';
+        document.body.appendChild(el);
+        el.focus();
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+        showToast();
+      }
+    }
+  </script>
+
+</body>
+
+</html>

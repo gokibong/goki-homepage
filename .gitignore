@@ -1,0 +1,18 @@
+# 작업용 스크린샷 (임시)
+mobile-preview*.png
+
+# Playwright
+.playwright-mcp/
+
+# Claude Code
+.claude/
+
+# OS 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 에디터
+.vscode/
+.idea/
+*.swp
