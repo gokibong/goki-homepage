@@ -24,43 +24,25 @@
     }
 
     /* ── 헤더 ── */
-    .header {
-      background: #1F3864;
-      color: #fff;
-      padding: 40px 20px 32px;
-      text-align: center;
-    }
-
-    .profile-wrap {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      border: 3px solid #fff;
-      margin: 0 auto 20px;
+    .hero-photo {
+      width: 100%;
+      height: 320px;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
     }
 
-    .profile-initial {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #1F3864;
-      line-height: 1;
-    }
-
-    /*
-      프로필 사진을 추가하려면:
-      1. profile.jpg 파일을 이 HTML 파일과 같은 폴더에 넣으세요.
-      2. 아래 .profile-wrap 안의 <span>을 지우고
-         <img src="profile.jpg" alt="고기봉">으로 교체하세요.
-    */
-    .profile-wrap img {
+    .hero-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .hero-name {
+      background: #1F3864;
+      color: #fff;
+      padding: 20px 20px 24px;
+      text-align: center;
     }
 
     .name-line {
@@ -187,14 +169,14 @@
 
 <body>
 
-  <!-- 헤더: 이름·직책·회사 -->
-  <header class="header">
-    <div class="profile-wrap">
-      <!-- 프로필 사진 준비 전: 이니셜 표시 -->
-      <!-- 사진 파일이 있으면 위 span을 지우고 아래를 활성화하세요 -->
+  <!-- 헤더: 대형 사진 + 이름 띠 -->
+  <header>
+    <div class="hero-photo">
       <img src="goki_picture1.png" alt="고기봉">
     </div>
-    <p class="name-line">고기봉 · AI 컨설턴트 · 상상우리</p>
+    <div class="hero-name">
+      <p class="name-line">고기봉 · AI 컨설턴트 · 상상우리</p>
+    </div>
   </header>
 
   <!-- 자기소개 -->
